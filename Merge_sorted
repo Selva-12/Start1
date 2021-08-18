@@ -1,0 +1,22 @@
+def merge_array(arr1,arr2):
+  if (len(arr1)==0):
+    return arr2
+  elif(len(arr2)==0):
+    return arr1
+  else:
+    merge_arr=[]
+    i,j =0,0
+    while(i<len(arr1) and j<len(arr2)):
+      if (arr1[i]<=arr2[j]):
+        merge_arr.append(arr1[i])
+        i+=1
+      elif(arr1[i]>arr2[j]):
+        merge_arr.append(arr2[j])
+        j+=1
+    merge_arr=merge_arr+arr1[i:]+arr2[j:]
+    return merge_arr
+
+
+arr1 = [0,3,4,31]
+arr2 = []
+print(merge_array(arr1,arr2))
